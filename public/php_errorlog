@@ -1,0 +1,6 @@
+[15-May-2020 14:11:30 CST6CDT] PHP Fatal error:  Uncaught Error: Class 'ComposerAutoloaderInitd9f6f5cee5c49dbafc7d6c45b697bafe' not found in /home/customer/www/facturando.pro/public_html/vendor/autoload.php:7
+Stack trace:
+#0 /home/customer/www/facturando.pro/public_html/public/index.php(57): require()
+#1 {main}
+  thrown in /home/customer/www/facturando.pro/public_html/vendor/autoload.php on line 7
+[25-May-2020 08:40:10 CST6CDT] PHP Fatal error:  require(): Failed opening required '/home/customer/www/facturando.pro/public_html/vendor/composer/../unicodeveloper/laravel-paystack/src/Support/helpers.php' (include_path='.:/usr/local/php73/pear') in /home/customer/www/facturando.pro/public_html/vendor/composer/autoload_real.php on line 66
