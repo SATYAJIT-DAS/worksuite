@@ -40,7 +40,6 @@ class RegisterController extends FrontBaseController
         try {
             $company->company_name = $request->company_name;
             $company->company_email = $request->email;
-            $company->company_email = $request->email;
             $company->company_email = $request->company_category;
 
             if (module_enabled('Subdomain')){
