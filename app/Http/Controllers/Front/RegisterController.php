@@ -9,6 +9,7 @@ use App\Notifications\EmailVerificationSuccess;
 use App\Role;
 use App\SeoDetail;
 use App\User;
+use App\CompanyGroup;
 use Illuminate\Support\Facades\DB;
 
 class RegisterController extends FrontBaseController
@@ -20,7 +21,7 @@ class RegisterController extends FrontBaseController
         }
         $this->seoDetail = SeoDetail::where('page_name', 'home')->first();
         $this->pageTitle = 'Sign Up';
-
+        $this->categories = CompanyGroup::all();
         $view = ($this->setting->front_design == 1) ? 'saas.register' : 'front.register';
 
         return view($view, $this->data);
@@ -39,6 +40,8 @@ class RegisterController extends FrontBaseController
         try {
             $company->company_name = $request->company_name;
             $company->company_email = $request->email;
+            $company->company_email = $request->email;
+            $company->company_email = $request->company_category;
 
             if (module_enabled('Subdomain')){
                 $company->sub_domain = $request->sub_domain;
