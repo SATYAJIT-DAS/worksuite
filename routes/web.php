@@ -94,8 +94,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('faq-category/data', ['uses' => 'SuperAdminFaqCategoryController@data'])->name('faq-category.data');
         Route::resource('/faq-category', 'SuperAdminFaqCategoryController');
 
-       
-        
+
+
         // Packages routes
         Route::get('packages/data', ['uses' => 'SuperAdminPackageController@data'])->name('packages.data');
         Route::resource('/packages', 'SuperAdminPackageController');
@@ -112,6 +112,8 @@ Route::group(['middleware' => 'auth'], function () {
          // company Groups routes
         Route::get('company-groups/data', ['uses' => 'SuperAdminCompanyGroupController@data'])->name('company-groups.data');
         Route::resource('/company-groups', 'SuperAdminCompanyGroupController');
+
+        
         Route::get('invoices/data', ['uses' => 'SuperAdminInvoiceController@data'])->name('invoices.data');
         Route::resource('/invoices', 'SuperAdminInvoiceController', ['only' => ['index']]);
         Route::get('paypal-invoice-download/{id}', array('as' => 'paypal.invoice-download','uses' => 'SuperAdminInvoiceController@paypalInvoiceDownload',));
