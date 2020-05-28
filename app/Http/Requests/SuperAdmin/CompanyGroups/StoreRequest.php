@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\SuperAdmin\Companygroups;
+namespace App\Http\Requests\SuperAdmin\CompanyGroups;
 
 use App\Http\Requests\SuperAdmin\SuperAdminBaseRequest;
 

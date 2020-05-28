@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Company;
 use App\CompanyGroup;
-use App\Http\Requests\SuperAdmin\Companygroups\StoreRequest;
+use App\Http\Requests\SuperAdmin\CompanyGroups\StoreRequest;
 use App\Package;
 use App\Role;
 use App\User;
@@ -131,7 +131,7 @@ class SuperAdminCompanyGroupController extends SuperAdminBaseController
             })
             ->addColumn('action', function($row){
                 $action = '';
-                
+
 
                 $action .= ' <a href="javascript:;" class="btn btn-danger btn-circle sa-params"
                   data-toggle="tooltip" data-user-id="'.$row->id.'" data-original-title="'.trans('app.delete').'"><i class="fa fa-times" aria-hidden="true"></i></a>';
