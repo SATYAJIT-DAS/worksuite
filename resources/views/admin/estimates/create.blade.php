@@ -48,7 +48,7 @@
 
                             <div class="row">
 
-                                <div class="col-md-6">
+                                <div class="col-md-2">
                                     <div class="form-group">
                                         <label class="control-label">@lang('app.estimate') #</label>
                                         <div>
@@ -59,7 +59,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-5">
                                     <div class="form-group" >
                                         <label class="control-label">@lang('app.client')</label>
                                         <div class="row">
@@ -68,6 +68,22 @@
                                                     @foreach($clients as $client)
                                                         <option
                                                         value="{{ $client->user_id }}">{{ ucwords(!is_null($client->company_name) ? $client->company_name : $client->name) }}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group" >
+                                        <label class="control-label">Company Groups</label>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <select class="select2 form-control" data-placeholder="Choose Company Group" name="company_category_id">
+                                                  <option value=""> -- Select One --</option>
+                                                    @foreach($Companycategories as $Companycategorie)
+                                                        <option
+                                                        value="{{ $Companycategorie->id }}">{{ ucwords(!is_null($Companycategorie->name) ? $Companycategorie->name : $client->name) }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -132,23 +148,23 @@
                                         <div class="col-md-4 font-bold" style="padding: 8px 15px">
                                             @lang('modules.invoices.item')
                                         </div>
-    
+
                                         <div class="col-md-1 font-bold" style="padding: 8px 15px">
                                             @lang('modules.invoices.qty')
                                         </div>
-    
+
                                         <div class="col-md-2 font-bold" style="padding: 8px 15px">
                                             @lang('modules.invoices.unitPrice')
                                         </div>
-    
+
                                         <div class="col-md-2 font-bold" style="padding: 8px 15px">
                                             @lang('modules.invoices.tax') <a href="javascript:;" id="tax-settings" ><i class="ti-settings text-info"></i></a>
                                         </div>
-    
+
                                         <div class="col-md-2 text-center font-bold" style="padding: 8px 15px">
                                             @lang('modules.invoices.amount')
                                         </div>
-    
+
                                         <div class="col-md-1" style="padding: 8px 15px">
                                             &nbsp;
                                         </div>
@@ -175,7 +191,7 @@
 
                                     </div>
 
-                                    
+
 
                                     <div class="col-md-1">
 
@@ -282,7 +298,7 @@
 
                                         <input type="hidden" class="total-field" name="total" value="0">
                                     </div>
-    
+
                                 </div>
 
                             </div>
@@ -531,16 +547,16 @@
                 {
                     if(typeof (taxList[itemTaxName[i]]) === 'undefined'){
                         if (discountedAmount > 0) {
-                            taxList[itemTaxName[i]] = ((parseFloat(itemTax[i])/100)*parseFloat(discountedAmount));                         
+                            taxList[itemTaxName[i]] = ((parseFloat(itemTax[i])/100)*parseFloat(discountedAmount));
                         } else {
                             taxList[itemTaxName[i]] = ((parseFloat(itemTax[i])/100)*parseFloat(amount));
                         }
                     }
                     else{
                         if (discountedAmount > 0) {
-                            taxList[itemTaxName[i]] = parseFloat(taxList[itemTaxName[i]]) + ((parseFloat(itemTax[i])/100)*parseFloat(discountedAmount));   
+                            taxList[itemTaxName[i]] = parseFloat(taxList[itemTaxName[i]]) + ((parseFloat(itemTax[i])/100)*parseFloat(discountedAmount));
                             console.log(taxList[itemTaxName[i]]);
-                         
+
                         } else {
                             taxList[itemTaxName[i]] = parseFloat(taxList[itemTaxName[i]]) + ((parseFloat(itemTax[i])/100)*parseFloat(amount));
                         }
@@ -567,7 +583,7 @@
         $('.sub-total').html(decimalupto2(subtotal).toFixed(2));
         $('.sub-total-field').val(decimalupto2(subtotal));
 
-        
+
 
         if(discountValue != ''){
             if(discountType == 'percent'){

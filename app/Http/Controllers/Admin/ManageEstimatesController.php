@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Tax;
 use App\Product;
+use App\CompanyGroup;
 
 class ManageEstimatesController extends AdminBaseController
 {
@@ -50,6 +51,7 @@ class ManageEstimatesController extends AdminBaseController
         }
         $this->taxes = Tax::all();
         $this->products = Product::all();
+        $this->Companycategories = CompanyGroup::all();
         return view('admin.estimates.create', $this->data);
     }
 
